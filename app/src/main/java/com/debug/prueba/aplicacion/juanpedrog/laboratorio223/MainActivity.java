@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
         show=findViewById(R.id.btnMostrar);
         lista=findViewById(R.id.lista);
         layoutManager=new LinearLayoutManager(this);
-        Datos ejemplo=new Datos("dakj","kdajf","dsjkf");
-        datos.add(ejemplo);
-        Adapter adapter=new Adapter(datos);
-        lista.setAdapter(adapter);
-        lista.setLayoutManager(layoutManager);
+        //Datos ejemplo=new Datos("dakj","kdajf","dsjkf");
+        //datos.add(ejemplo);
+        //Adapter adapter=new Adapter(datos);
+        //lista.setAdapter(adapter);
+        //lista.setLayoutManager(layoutManager);
 
 
         db_helper=new SqliteHelper(this);
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                datos.clear();
                 Cursor res=db_helper.getAllData();
                 if(res.getCount()==0){
                     return;
